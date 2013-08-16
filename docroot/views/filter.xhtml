@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:aui="http://alloy.liferay.com/tld/aui">
+	<h:head />
+	<h:body>
+		<h:form>
+
+			<p:panel>
+				<f:facet name="header">
+					<h:outputText value="#{myReport.selectedReport.report.reportName}" />					
+				</f:facet>
+
+				<h:panelGrid columns="2" styleClass="spacedPanelGrid">
+
+					<strong>From: </strong>
+					<p:calendar id="startDate" value="#{myReport.selectedReport.reportStartDate.time}" required="true"
+						readonlyInput="true" pattern="yyyy-MM-dd">
+						<p:ajax event="dateSelect" update="links" />
+					</p:calendar>
+
+					<strong>To: </strong>
+					<p:calendar id="endDate" value="#{myReport.selectedReport.reportEndDate.time}" required="true" readonlyInput="true"
+						pattern="yyyy-MM-dd">
+						<p:ajax event="dateSelect" update="links" />
+					</p:calendar>
+
+				</h:panelGrid>
+
+				<h:panelGrid columns="4" styleClass="spacedPanelGrid" id="links">
+
+					<h:outputLink target="_blank" value="#{myReport.selectedReport.reportHtmlResourceURL}"
+						title="View report in HTML format"
+						class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+						<span class="ui-button-icon-left ui-icon ui-icon-html"></span>
+						<span class="ui-button-text">HTML</span>
+					</h:outputLink>
+					
+					<h:outputLink target="_blank" value="#{myReport.selectedReport.reportPdfResourceURL}"
+						title="View report in PDF format"
+						class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+						<span class="ui-button-icon-left ui-icon ui-icon-pdf"></span>
+						<span class="ui-button-text">PDF</span>
+					</h:outputLink>
+					
+					<h:outputLink target="_blank" value="#{myReport.selectedReport.reportExcelResourceURL}"
+						title="View report in Excel format"
+						class="ui-button ui-widget ui-state-default ui-corner-all ui-button-text-icon-left">
+						<span class="ui-button-icon-left ui-icon ui-icon-excel"></span>
+						<span class="ui-button-text">Excel</span>
+					</h:outputLink>
+					<p:commandButton value="Back" action="view" process="@this" icon="ui-icon-arrowthick-1-w" />
+
+				</h:panelGrid>
+
+			</p:panel>
+
+		</h:form>
+
+	</h:body>
+</f:view>

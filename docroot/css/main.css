@@ -1,0 +1,41 @@
+.spacedPanelGrid {
+	margin-bottom: 10px;
+	border-collapse: separate;
+	border-spacing: 1.2em;
+}
+
+.spacedRadio {	
+	border-collapse: separate;
+	border-spacing: 0.6em;
+}
+
+a.ui-button:hover {
+	border: 1px solid #7096ab;
+	background: #85b2cb -webkit-gradient(linear, left top, left bottom, from(rgba(255,255,255,0.6)), to(rgba(255,255,255,0)));
+	font-weight: bold;
+	color: #313131;
+	-moz-box-shadow: 0 0 5px #85b2cb;
+	-webkit-box-shadow: 0px 0px 8px #85b2cb;
+	box-shadow: 0px 0px 8px #85b2cb;
+}
+
+a .ui-icon-html {
+	background-image: url("/liferay-pentaho-reports-portlet/css/html.png") !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+a .ui-icon-pdf {
+	background-image: url("/liferay-pentaho-reports-portlet/css/pdf_icon.gif") !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}
+
+a .ui-icon-excel {
+	background-image: url("/liferay-pentaho-reports-portlet/css/excel.jpg") !important;
+	-moz-border-radius: 0 !important;
+	-webkit-border-radius: 0 !important;
+	border-radius: 0 !important;
+}

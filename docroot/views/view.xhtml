@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<f:view xmlns="http://www.w3.org/1999/xhtml" xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core" xmlns:h="http://java.sun.com/jsf/html" xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:aui="http://alloy.liferay.com/tld/aui">
+	<h:head />
+	<h:body>
+		<h:form>
+
+			<p:tabView id="tabView">
+				<p:tab id="tab1" title="Standard Reports">
+					<p:dataTable value="#{myReport.reportList}" var="r" sortBy="#{r.report.reportName}" sortOrder="ascending">
+						<p:column headerText="Report Name" style="width: 75%;" sortBy="#{r.report.reportName}">
+							<p:commandLink title="View" value="#{r.report.reportName}" action="filter">
+								<f:setPropertyActionListener value="#{r}" target="#{myReport.selectedReport}" />
+							</p:commandLink>							
+						</p:column>
+						<!-- <p:column headerText="Report Type" style="width: 15%; text-align:center;" sortBy="#{r.report.reportType}" filterBy="#{r.report.reportType}"
+							filterOptions="#{myReport.reportTypeOptions}" filterMatchMode="exact">
+							<h:outputText value="#{r.report.reportType}" />
+						</p:column> -->
+						<p:column style="width: 10%; text-align: center;">
+							<p:commandButton icon="ui-icon-search" title="View" action="filter">
+								<f:setPropertyActionListener value="#{r}" target="#{myReport.selectedReport}" />
+							</p:commandButton>
+						</p:column>						 
+					</p:dataTable>
+				</p:tab>
+			</p:tabView>
+
+		</h:form>
+	</h:body>
+</f:view>
